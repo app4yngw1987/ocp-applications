@@ -12,9 +12,9 @@ spec:
     - |
       echo "start..."
       tail -f /dev/null
-    image: busybox
+    image: nginx:1.18.0
     imagePullPolicy: IfNotPresent
-    name: nginx-pod-container
+    name: nginx
     resources:
       limits:
         cpu: 200m
@@ -22,3 +22,5 @@ spec:
       requests:
         cpu: 200m
         memory: 256Mi
+    ports:
+      - containerPort: 80
